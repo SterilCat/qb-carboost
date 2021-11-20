@@ -10,7 +10,8 @@ Config.spawnpoints = {
     { x = -1269.74, y = 233.04, z = 60.82, h = 99.8 },
     { x = -1183.65, y = -1268.58, z = 5.84, h = 26.37 },
     { x = -903.75, y = 1087.5, z = 220.09, h = 9.45 },
-    { x = -3003.39, y = 1456.03, z = 26.83, h = 331.48 }
+    { x = -3003.39, y = 1456.03, z = 26.83, h = 331.48 },
+    {x = 2259.48, y = 3831.38, z = 34.26, h = 297.66}
 
 }
 -- Possible models that can spawn
@@ -28,9 +29,6 @@ Config.vehicles = {
     { m = "asea" },
     { m = "exemplar" }
 }
-
--- Min - Max
-Config.paid = math.random(750, 2500) -- amount of money you earn by delivering a car
 
 -- enable / disable the blip where the npc is located
 Config.blip = true

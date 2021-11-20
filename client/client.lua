@@ -1,5 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-local mission, inzone1 = false, false
+local mission, inzone1, inzone2 = false, false, false
 local ped, pedenauto, flomsg1, flomsg2, blip, blip2, blip3, Veh
 
 local function DrawText3D(text, coords)
@@ -101,6 +100,7 @@ CreateThread(function()
     while true do
         local sleep = 1000
         inzone1 = #(vector3(1200.58, -3114.56, 4.5) - GetEntityCoords(PlayerPedId())) < 7.0
+        inzone2 = #(vector3(1189.46, -3108.26, 4.24) - GetEntityCoords(PlayerPedId())) < 7.0
         if inzone1 and not mission then
             sleep = 0
             DrawText3D(flomsg1, vector3(1200.58, -3114.56, 6.5))
@@ -114,7 +114,7 @@ CreateThread(function()
         if mission then
             sleep = 0
             DrawMarker(1, 1189.46, -3108.26, 4.24, 0, 0, 0, 0, 0, 0, 3.5001, 3.5001, 0.6001, 0, 0, 255, 200, 0, 0, 0, 0)
-            if inzone1 then
+            if inzone2 then
                 DrawText3D(flomsg2, vector3(1189.46, -3108.26, 4.24+2))
                 if IsControlJustPressed(1, Config.InteractKey) then
                     local coordsauto = GetEntityCoords(Veh)
